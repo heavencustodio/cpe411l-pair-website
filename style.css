@@ -83,42 +83,108 @@ nav ul li a.active {
     background-color: #553322;
 }
 
-/* ===== Menu Preview ===== */
+/* ===== Menu Page ===== */
 #menu {
     padding: 60px 20px;
     background-color: #fff8f0;
 }
 
 #menu h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 40px;
     color: #6f4e37;
 }
 
 .menu-items {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
 }
 
 .menu-items .item {
     background-color: #fff;
+    border: 2px solid #d9cbb7;
     padding: 20px;
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-items .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .menu-items .item h3 {
-    margin-top: 0;
+    font-size: 1.3rem;
     margin-bottom: 10px;
     color: #6f4e37;
 }
 
 .menu-items .item p {
-    margin: 0;
     font-size: 0.95rem;
+    color: #4B2E2E;
+    margin: 0;
+}
+
+.menu-items .item .price {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #6f4e37;
+}
+
+/* Categories */
+.menu-items .item.coffee {
+    border-top: 3px solid #6f4e37;
+}
+
+.menu-items .item.tea {
+    border-top: 3px solid #4e9e3d;
+}
+
+/* ===== Contact Page ===== */
+.contact {
+    padding: 60px 20px;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #6f4e37;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #d9cbb7;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 12px 25px;
+    background-color: #6f4e37;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #553322;
 }
 
 /* ===== Footer ===== */
@@ -129,11 +195,10 @@ footer {
     margin-top: 50px;
 }
 
-/* ===== Responsive design ===== */
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: row; /* keep horizontal, allow wrap */
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 15px;
         justify-content: center;
     }
@@ -141,5 +206,10 @@ footer {
     .menu-items {
         flex-direction: column;
         align-items: center;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 90%;
     }
 }
